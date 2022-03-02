@@ -1,4 +1,4 @@
-const cleanBathroomAPI = (dataArr) => {
+export const cleanBathroomAPI = (dataArr) => {
     const cleanedAPI = dataArr.map(data => {
         return {
             id: data.id,
@@ -24,4 +24,10 @@ const cleanBathroomAPI = (dataArr) => {
     return cleanedAPI
 }
 
-export default cleanBathroomAPI;
+export const cleanZipCodeAPI = (data) => {
+    const location = {
+        latitude: data.places[0].latitude,
+        longitude: data.places[0].longitude
+    }
+    return location;
+}

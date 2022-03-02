@@ -1,13 +1,17 @@
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.scss';
-import Header from './Components/Header/Header';
-import Search from './Components/Search/Search';
+import Main from './Components/Main/Main';
 
 const App = () => {
   return (
-    <main className='main-page non-binary-gradient'>
-      <Header />
-      <Search/>
-    </main>
+    <div className="App">
+    <Switch>
+      <Route exact path="/" component={Main} />
+      {/* <Route exact path="/error" component={ErrorPage} /> */}
+      <Redirect to="/error" />
+    </Switch>
+  </div>
   );
 }
 

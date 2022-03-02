@@ -14,7 +14,7 @@ const Search = () => {
                     placeholder="Enter location"
                     name="search" 
                 />
-                <button type="submit" className='search-button'>Search Now</button>
+                <button type="submit" className='non-binary-search-button'>Search Now</button>
             </form>
         </section>
     )

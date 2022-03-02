@@ -36,3 +36,22 @@
         transition: 0.4s all;
     }
 }
+
+.non-binary-search-button {
+    height: 100%;
+    width: 30vw;
+    background-color: #5B20B9;
+    color: white;
+    font-size: 17px;
+    padding: 9px;
+    margin: 1%;;
+    border: 4px white solid;
+    border-radius: 10px;
+    &:hover {
+        background-color: #FFEE61;
+        color: black;
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.4s all;
+    }
+}

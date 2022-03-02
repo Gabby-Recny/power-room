@@ -4,7 +4,7 @@ import Search from "../Search/Search";
 
 const Main = () => {
     return (
-        <section className='main-page'>
+        <section className='main-page non-binary-gradient'>
             <h2>Main</h2>
             <Search />
         </section>

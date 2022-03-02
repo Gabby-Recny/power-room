@@ -1,5 +1,24 @@
 .main-page {
-    background-color: thistle;
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px yellowgreen dotted;
+    background-image: linear-gradient(
+        0deg,
+        hsl(189deg 100% 78%) 0%,
+        hsl(198deg 100% 81%) 9%,
+        hsl(246deg 100% 91%) 18%,
+        hsl(299deg 100% 88%) 27%,
+        hsl(300deg 100% 93%) 36%,
+        hsl(300deg 100% 98%) 45%,
+        hsl(300deg 100% 98%) 55%,
+        hsl(300deg 100% 93%) 64%,
+        hsl(299deg 100% 88%) 73%,
+        hsl(246deg 100% 91%) 82%,
+        hsl(198deg 100% 81%) 91%,
+        hsl(189deg 100% 78%) 100%
+      );
 }

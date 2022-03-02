@@ -4,7 +4,7 @@ import Main from './Components/Main/Main';
 
 function App() {
   return (
-    <section classname='app'>
+    <section className='app'>
       <Header />
       <Main />
 

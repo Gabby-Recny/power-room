@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-page {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.transgender-gradient {
+background-image: linear-gradient(
+  0deg,
+  hsl(189deg 100% 78%) 0%,
+  hsl(198deg 100% 81%) 9%,
+  hsl(246deg 100% 91%) 18%,
+  hsl(299deg 100% 88%) 27%,
+  hsl(300deg 100% 93%) 36%,
+  hsl(300deg 100% 98%) 45%,
+  hsl(300deg 100% 98%) 55%,
+  hsl(300deg 100% 93%) 64%,
+  hsl(299deg 100% 88%) 73%,
+  hsl(246deg 100% 91%) 82%,
+  hsl(198deg 100% 81%) 91%,
+  hsl(189deg 100% 78%) 100%
+);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.non-binary-gradient {
+background-image: linear-gradient(
+180deg,
+hsl(55deg 100% 51%) 0%,
+hsl(53deg 100% 92%) 20%,
+hsl(300deg 100% 100%) 40%,
+hsl(270deg 59% 77%) 60%,
+hsl(262deg 100% 34%) 80%,
+hsl(0deg 0% 0%) 100%
+);
 }

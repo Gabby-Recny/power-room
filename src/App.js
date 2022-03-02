@@ -1,14 +1,13 @@
 import './App.scss';
 import Header from './Components/Header/Header';
-import Main from './Components/Main/Main';
+import Search from './Components/Search/Search';
 
-function App() {
+const App = () => {
   return (
-    <section className='app'>
+    <main className='main-page non-binary-gradient'>
       <Header />
-      <Main />
-
-    </section>
+      <Search/>
+    </main>
   );
 }
 

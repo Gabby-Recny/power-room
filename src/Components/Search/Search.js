@@ -12,7 +12,7 @@ const Search = () => {
                 <input
                     type="text"
                     placeholder="Enter location"
-                    name="search" 
+                    name="search"
                 />
                 <button type="submit" className='non-binary-search-button'>Search Now</button>
             </form>

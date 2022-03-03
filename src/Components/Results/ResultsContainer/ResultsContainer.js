@@ -3,8 +3,6 @@ import './ResultsContainer.scss';
 import ResultCard from "../ResultsCard/ResultCard";
 import { getZipCode, getBathrooms } from "../../../utilities/apiCalls";
 import Loader from '../../Loader/Loader';
-import { checkZipCode } from "../../../utilities/checkZipCode";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const ResultsContainer = ({ postalCode }) => {
     

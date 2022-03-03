@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import Main from './Components/Main/Main';
 import Header from './Components/Header/Header';
@@ -13,7 +13,6 @@ const App = () => {
         <Route exact path="/" component={Main} />
         <Route path="/results/:postalCode"  
         render={({ match }) => {
-          console.log('App', match.params.postalCode)
           return <ResultsContainer postalCode={match.params.postalCode} />
         }
       }></Route>

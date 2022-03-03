@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import './Search.scss';
-// import { getBathrooms, getZipCode } from "../../utilities/apiCalls";
-// import ResultsContainer from "../Results/ResultsContainer/ResultsContainer";
-import { Redirect, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Search = () => {
 
 const [ postalCode, setPostalCode ] = useState([]);
-const [ results, setResults ] = useState([]);
 
-const handleClick = (event) => {
-    event.preventDefault()
-}
 
     return (
         <section className='search-section'>

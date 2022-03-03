@@ -1,7 +1,11 @@
-import React from "react";
-import './Search.scss'
+import React, { useState } from "react";
+import './Search.scss';
+import { Link } from "react-router-dom";
 
 const Search = () => {
+
+const [ postalCode, setPostalCode ] = useState([]);
+
 
     return (
         <section className='search-section'>
@@ -11,10 +15,15 @@ const Search = () => {
                 </label>
                 <input
                     type="text"
-                    placeholder="Enter location"
+                    placeholder="Enter zip code"
                     name="search"
+                    onChange={(event) => setPostalCode(event.target.value)}
                 />
-                <button type="submit" className='non-binary-search-button'>Search Now</button>
+                <Link to={'results/' + postalCode}>
+                    <button type="submit" className='non-binary-search-button'>
+                        Search Now
+                    </button>
+                </Link>
             </form>
         </section>
     )

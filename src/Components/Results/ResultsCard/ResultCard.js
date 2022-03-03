@@ -5,7 +5,7 @@ const ResultCard = (props) => {
 
 
     return (
-        <article className='result-card'>
+        <article className='result-card slide-top'>
             <h2>{props.name}</h2>
             <h5>{props.street}</h5>
             <h5>{props.city}</h5>

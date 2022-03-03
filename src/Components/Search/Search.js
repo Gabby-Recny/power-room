@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import './Search.scss';
-import { getBathrooms, getZipCode } from "../../utilities/apiCalls";
-import ResultsContainer from "../Results/ResultsContainer/ResultsContainer";
+// import { getBathrooms, getZipCode } from "../../utilities/apiCalls";
+// import ResultsContainer from "../Results/ResultsContainer/ResultsContainer";
+import { Redirect, Route, Link } from "react-router-dom";
 
 const Search = () => {
 
@@ -10,11 +11,8 @@ const [ results, setResults ] = useState([]);
 
 const handleClick = (event) => {
     event.preventDefault()
-    getZipCode(postalCode)
-    .then(location => getBathrooms(location.latitude, location.longitude))
-    .then(bathrooms => setResults(bathrooms))
-    .catch(err => console.log(err))
 }
+
     return (
         <section className='search-section'>
             <form className='search-bar'>
@@ -23,15 +21,16 @@ const handleClick = (event) => {
                 </label>
                 <input
                     type="text"
-                    placeholder="Enter location"
+                    placeholder="Enter zip code"
                     name="search"
                     onChange={(event) => setPostalCode(event.target.value)}
                 />
-                <button type="submit" className='non-binary-search-button'
-                onClick={event => handleClick(event)}
-                >Search Now</button>
+                <Link to={'results/' + postalCode}>
+                    <button type="submit" className='non-binary-search-button'>
+                        Search Now
+                    </button>
+                </Link>
             </form>
-            <ResultsContainer results={results}/>
         </section>
     )
 }

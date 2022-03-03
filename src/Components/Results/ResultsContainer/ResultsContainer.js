@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import './ResultsContainer.scss';
 import ResultCard from "../ResultsCard/ResultCard";
 import { getZipCode, getBathrooms } from "../../../utilities/apiCalls";
+import Loader from '../../Loader/Loader';
 
 const ResultsContainer = ({ postalCode }) => {
     
     const [ results, setResults ] = useState([]);
+    const [ isLoading, setLoader ]  = useState(true);
     
     getZipCode (postalCode) 
         .then(location => getBathrooms(location.latitude, location.longitude))
-        .then(bathrooms => setResults(bathrooms))
+        .then(bathrooms => {
+            setResults(bathrooms)
+            setLoader(false) 
+        })
         .catch(err => console.log(err))
+
+
+
 
     const bathroomResults = results.map(result => {
         return (
@@ -39,6 +47,7 @@ const ResultsContainer = ({ postalCode }) => {
     })
     return (
         <section className='results-container'>
+            {isLoading && <Loader />}
             {bathroomResults}
         </section>
     )

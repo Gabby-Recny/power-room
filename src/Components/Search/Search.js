@@ -7,6 +7,7 @@ const Search = () => {
 const [ postalCode, setPostalCode ] = useState([]);
 
 
+
     return (
         <section className='search-section'>
             <form className='search-bar'>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import './Search.scss';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import ResultsContainer from "../Results/ResultsContainer/ResultsContainer";
 
 const Search = () => {
 
 const [ postalCode, setPostalCode ] = useState([]);
-
 
 
     return (
@@ -20,9 +20,10 @@ const [ postalCode, setPostalCode ] = useState([]);
                     name="search"
                     onChange={(event) => setPostalCode(event.target.value)}
                 />
-                <Link to={'results/' + postalCode}>
+                <Link 
+                    to={'results/' + postalCode}>
                     <button type="submit" className='non-binary-search-button'>
-                        Search Now
+                        Search
                     </button>
                 </Link>
             </form>

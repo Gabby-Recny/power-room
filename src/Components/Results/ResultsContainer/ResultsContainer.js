@@ -3,13 +3,14 @@ import './ResultsContainer.scss';
 import ResultCard from "../ResultsCard/ResultCard";
 import { getZipCode, getBathrooms } from "../../../utilities/apiCalls";
 import Loader from '../../Loader/Loader';
+import { Link } from "react-router-dom";
 
 const ResultsContainer = ({ postalCode }) => {
     
     const [ results, setResults ] = useState([]);
     const [ isLoading, setLoader ]  = useState(true);
-    const [ error, setError ] = useState()
-
+    const [ error, setError ] = useState();
+    const [ selectedBathroom, setSelectedBathroom ] = useState({});
 
     useEffect( () => {
         getZipCode (postalCode) 
@@ -27,7 +28,6 @@ const ResultsContainer = ({ postalCode }) => {
                         .catch(error => setError(error))
                 }
             })
-
     })
 
     const checkResults = () => {
@@ -38,6 +38,7 @@ const ResultsContainer = ({ postalCode }) => {
         } else {
             const bathroomResults = results.map(result => {
                 return (
+                    // <Link to={'/:result.id'} key={result.id}>
                     <ResultCard 
                         key={result.id}
                         id={result.id}
@@ -59,6 +60,7 @@ const ResultsContainer = ({ postalCode }) => {
                         distance={result.distance}
                 
                     />
+                // </Link>
                 )
             })
             return bathroomResults

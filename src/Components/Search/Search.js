@@ -3,33 +3,26 @@ import './Search.scss';
 import { Link } from "react-router-dom";
 import ResultsContainer from "../Results/ResultsContainer/ResultsContainer";
 import { getZipCode } from "../../utilities/apiCalls";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 
 const Search = () => {
     const [ postalCode, setPostalCode ] = useState()
     const [ error, setError ] = useState('')
     const [ location, setLocation ] = useState({})
-    const [ isDisabled, setDisabled ] = useState(true)
 
 
     const handleClick = (event) => {
         event.preventDefault();
         if (postalCode.length !== 5) {
-            clearInputs()
+            setPostalCode(0)
             setError('Please insert a valid postal code.')
-            setDisabled(true)
         }  else {
             setError('')
-            setDisabled(false)
             fetchLocation();
 
         }
     }
 
-    const clearInputs = () => {
-        setPostalCode(0)
-    }
 
     const fetchLocation = () => {
         getZipCode(postalCode)
@@ -40,7 +33,6 @@ const Search = () => {
 
     return (
         <>
-        {error && <h5>{error}</h5>}
            <section className='search-section'>
                 <form className='search-bar'>
                       <label>
@@ -48,10 +40,10 @@ const Search = () => {
                      </label>
                      <input
                          type="text"
-                          placeholder="Enter zip code"
-                        name="postalCode"
-                        onChange={(event) => setPostalCode(event.target.value)}
-                     />
+                         placeholder="Enter zip code"
+                         name="postalCode"
+                         onChange={(event) => setPostalCode(event.target.value)}
+                         />
                    <button 
                        className='non-binary-search-button'
                        type={"submit"}
@@ -60,6 +52,7 @@ const Search = () => {
                    </button>
                   </form>
            </section>
+           {error && <h5>{error}</h5>}
        </>
 
     )

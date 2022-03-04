@@ -15,19 +15,14 @@ const ResultsContainer = ({ postalCode }) => {
     useEffect( () => {
         getZipCode (postalCode) 
             .then(location => {
-                if (!location.latitude && !location.longitude) {
-                    setError('error')
-                    setLoader(false) 
-                } else {
-                    setError('')
-                    getBathrooms(location.latitude, location.longitude)
-                        .then(bathrooms => {
-                            setResults(bathrooms)
-                            setLoader(false) 
-                        })
-                        .catch(error => setError(error))
-                }
-            })
+                setError('')
+                getBathrooms(location.latitude, location.longitude)
+                    .then(bathrooms => {
+                        setResults(bathrooms)
+                        setLoader(false) 
+                    })
+                    .catch(error => setError(error))
+                })
     })
 
     const checkResults = () => {
@@ -71,7 +66,7 @@ const ResultsContainer = ({ postalCode }) => {
     return (
         <section className='results-container'>
             {isLoading && <Loader />}
-            {error && <h2>MAYDAY MAYDAY THERE'S BEEN AN ERROR</h2>}
+            {error && <h2>Looks like there's been an issue. Please try again</h2>}
             {checkResults()}
         </section>
     )

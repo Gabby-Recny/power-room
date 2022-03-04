@@ -42,12 +42,11 @@ const Main = () => {
             setLoader(false)
         })
         .catch(() => {
-            setLoader(false)
             setError(`Couldn't find any restrooms in your area! Please try a diferent search query.`)
+            setLoader(false)
         })
 
     }
-
 
     return (
         <>
@@ -72,9 +71,8 @@ const Main = () => {
         </section>
         {error && <h4>{error}</h4>}
         {isLoading && <Loader />}
-        {console.log('RESULTS:', results)}
-{        console.log(error)
-}        {results.length > 0 && <Results />}
+        {console.log('Line 74', results)}
+        {results.length > 0 && <Results results={results}/>}
         </>
     )
 }

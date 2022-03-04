@@ -1,25 +1,35 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import Main from './Components/Main/Main';
+import Search from './Components/Search/Search';
+import Main from './Components/Search/Main'
 import Header from './Components/Header/Header';
 import ResultsContainer from './Components/Results/ResultsContainer/ResultsContainer';
 import Error from './Components/Error/Error';
 import BathroomDetails from './Components/BathroomDetails/BathroomDetails';
+import Results from './Components/Results/ResultsContainer/Results';
 
 const App = () => {
+
+
   return (
-    <div className='App'>
+    <section className='App'>
       <Header />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route path='/results/:postalCode' 
+        {/* <Route exact path="/" component={Results} /> */}
+        {/* <Route exact path='/' component={Results} /> */}
+        {/* <Route path='/:postalCode' 
           render={( {match} ) => {
             return <ResultsContainer postalCode={match.params.postalCode} />
           }} />
-        <Route exact path="/error" component={Error}></Route>
+        <Route exact path="/error" component={Error}></Route> */}
+        {/* <Route path='/:postalCode/:id'
+          render={( {match} ) => {
+            return <BathroomDetails postalCode={} id={} />
+          }} */}
       </Switch>
-    </div>
+    </section>
   )
 }
 

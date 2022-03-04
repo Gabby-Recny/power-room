@@ -21,6 +21,7 @@ export const cleanBathroomAPI = (dataArr) => {
 
         }
     })
+    console.log(cleanedAPI)
     return cleanedAPI
 }
 
@@ -29,5 +30,6 @@ export const cleanZipCodeAPI = (data) => {
         latitude: data.places[0].latitude,
         longitude: data.places[0].longitude
     }
+    console.log(location)
     return location;
 }

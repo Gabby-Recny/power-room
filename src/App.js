@@ -4,22 +4,16 @@ import './App.scss';
 import Main from './Components/Search/Main'
 import Header from './Components/Header/Header';
 import Error from './Components/Error/Error';
-import BathroomDetails from './Components/BathroomDetails/BathroomDetails';
 
 const App = () => {
-
 
   return (
     <section className='App'>
       <Header />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route path='/:id'
-          render={( {match} ) => {
-            return <BathroomDetails id={match.params.id} />
-            }
-          }>
-        </Route>
+       {/* <Route exact path='/about' component={About} />
+        <Route exact path='/faq' component={FAQ} /> */}
         <Route exact path='/error' component={Error}/>
         <Redirect to='/error' />
       </Switch>

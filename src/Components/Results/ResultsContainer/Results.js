@@ -8,8 +8,7 @@ const Results = ({ results }) => {
             <Link 
                 to={`/${result.id}`} 
                 key={result.id}>
-                <ResultCard 
-                // key={result.id}
+                <ResultCard
                     id={result.id}
                     name={result.name}
                     street= {result.street}
@@ -17,25 +16,25 @@ const Results = ({ results }) => {
                     state={result.state}
                     accessible={result.accessible}
                     unisex={result.unisex}
-                    directions={result.directions}
-                    comment={result.comment}
-                    latitude={result.latitude}
-                    longitude={result.longitude}
-                    downvote={result.downvote}
-                    upvote={result.upvote}
-                    country={result.country}
-                    changing_table={result.changing_table}
-                    approved={result.approved}
-                    distance={result.distance}
+                    // directions={result.directions}
+                    // comment={result.comment}
+                    // latitude={result.latitude}
+                    // longitude={result.longitude}
+                    // downvote={result.downvote}
+                    // upvote={result.upvote}
+                    // country={result.country}
+                    // changing_table={result.changing_table}
+                    // approved={result.approved}
+                    // distance={result.distance}
                 />
             </Link>
         )
         })
     
         return (
-            <section className='results-container'>
-                {bathroomResults}
-            </section>
+                <section className='results-container'>
+                    {bathroomResults}
+                </section>
             )
 }
 

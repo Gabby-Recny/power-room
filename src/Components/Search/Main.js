@@ -30,6 +30,7 @@ const Main = () => {
         getZipCode(postalCode)
             .then(data => fetchBathrooms(data))
             .catch(() => {
+                setResults([])
                 setLoader(false)
                 setError(`Couldn't find your location! Please try a different postal code.`)
             })
@@ -42,6 +43,7 @@ const Main = () => {
             setLoader(false)
         })
         .catch(() => {
+            setResults([])
             setError(`Couldn't find any restrooms in your area! Please try a diferent search query.`)
             setLoader(false)
         })
@@ -71,7 +73,6 @@ const Main = () => {
         </section>
         {error && <h4>{error}</h4>}
         {isLoading && <Loader />}
-        {console.log('Line 74', results)}
         {results.length > 0 && <Results results={results}/>}
         </>
     )

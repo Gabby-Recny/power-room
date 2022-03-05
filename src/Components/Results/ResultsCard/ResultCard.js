@@ -1,5 +1,6 @@
 import React from "react";
 import './ResultCard.scss';
+import PropTypes from 'prop-types';
 import babyBoy from '../../../Assets/baby-boy.png';
 import ADAIcon from '../../../Assets/wheelchair.png';
 import lgbt from '../../../Assets/lgbt.png';
@@ -34,3 +35,18 @@ const ResultCard = (props) => {
 }
 
 export default ResultCard;
+
+ResultCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    street: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+    accessible: PropTypes.bool.isRequired,
+    unisex: PropTypes.bool.isRequired,
+    changing_table: PropTypes.bool.isRequired,
+    upvote: PropTypes.number.isRequired,
+    downvote: PropTypes.number.isRequired,
+    approved: PropTypes.bool.isRequired,
+    directions: PropTypes.string.isRequired,
+  };

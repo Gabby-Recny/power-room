@@ -1,15 +1,13 @@
 import React from "react";
-import ResultCard from "../ResultsCard/ResultCard";
-import { Link } from "react-router-dom";
+import ResultCard from '../ResultsCard/ResultCard';
+import './Results.scss';
 
 const Results = ({ results }) => {
     const bathroomResults = results.map(result => {
         return (
-            <Link 
-                to={`/${result.id}`} 
-                key={result.id}>
                 <ResultCard
                     id={result.id}
+                    key={result.id}
                     name={result.name}
                     street= {result.street}
                     city={result.city}
@@ -27,8 +25,7 @@ const Results = ({ results }) => {
                     // approved={result.approved}
                     // distance={result.distance}
                 />
-            </Link>
-        )
+            )
         })
     
         return (

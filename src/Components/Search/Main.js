@@ -54,19 +54,21 @@ const Main = () => {
     return (
         <>
         <section className='search-section'>
-            <form className='search-bar'>
+            <form className='search-bar' data-testid='search-bar'>
                 <label>
                     <span>Find a Safe Restroom Near You</span>
                 </label>
                 <input
                     type="number"
+                    data-testid='search-input'
                     placeholder="Enter zip code"
-                    name="postalCode"
+                    // name="postalCode"
                     onChange={(e) => setPostalCode(e.target.value)}
                 />
                 <button 
                     className='non-binary-search-button'
                     type="submit"
+                    data-testid='search-button'
                     onClick={(e) => handleSubmission(e)}>
                     Search
                 </button>

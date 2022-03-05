@@ -14,8 +14,12 @@
     hsl(198deg 100% 81%) 91%,
     hsl(189deg 100% 78%) 100%
   );
-  background-size: cover;
-  background-attachment: scroll;
+  // background-size: cover;
+  // background-attachment: scroll;
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 @mixin non-binary-gradient {

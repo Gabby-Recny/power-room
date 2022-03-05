@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getZipCode, getBathrooms } from "../../utilities/apiCalls";
 import Loader from "../Loader/Loader";
 import Results from "../Results/ResultsContainer/Results";
+import './Main.scss';
 
 const Main = () => {
     const [ postalCode, setPostalCode ] = useState('');

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getZipCode, getBathrooms } from "../../utilities/apiCalls";
 import Loader from "../Loader/Loader";
 import Results from "../Results/ResultsContainer/Results";
+import './Main.scss';
 
 const Main = () => {
     const [ postalCode, setPostalCode ] = useState('');
@@ -30,6 +31,7 @@ const Main = () => {
         getZipCode(postalCode)
             .then(data => fetchBathrooms(data))
             .catch(() => {
+                setResults([])
                 setLoader(false)
                 setError(`Couldn't find your location! Please try a different postal code.`)
             })
@@ -42,6 +44,7 @@ const Main = () => {
             setLoader(false)
         })
         .catch(() => {
+            setResults([])
             setError(`Couldn't find any restrooms in your area! Please try a diferent search query.`)
             setLoader(false)
         })
@@ -71,7 +74,6 @@ const Main = () => {
         </section>
         {error && <h4>{error}</h4>}
         {isLoading && <Loader />}
-        {console.log('Line 74', results)}
         {results.length > 0 && <Results results={results}/>}
         </>
     )

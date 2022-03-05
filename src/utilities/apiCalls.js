@@ -2,11 +2,9 @@ import { cleanBathroomAPI } from "./dataCleaning";
 import { cleanZipCodeAPI } from "./dataCleaning";
 
 export const getBathrooms = (lat, long) => {
-    return fetch(`https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=100&offset=0&lat=${lat}&lng=${long}`)
+    return fetch(`https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=${lat}&lng=${long}`)
         .then(response => checkResponse(response))
         .then(data => cleanBathroomAPI(data))
-
-
 }
 
 export const getZipCode = (zipcode) => {

@@ -6,7 +6,7 @@ import lgbt from '../../../Assets/lgbt.png';
 
 const ResultCard = (props) => {
     return (
-            <article className='result-card slide-top'>
+            <article className='result-card'>
                 <h2>{props.name}</h2>
                 <h5>{props.street}</h5>
                 <h5>{props.city}</h5>

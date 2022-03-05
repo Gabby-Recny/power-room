@@ -1,9 +1,7 @@
+
 describe('Search Bar', () => {
     beforeEach( () => {
-        cy.visit('http://localhost:3000')
-        // cy.intercept('GET', 'REFUGE RESTROOMS API', {
-        //     fixture: 'LArestrooms.json' })
-        // cy.visit('http://localhost:3000')
+         cy.visit('http://localhost:3000')
     })
     it('Should have a search bar that only takes in numbers', () => {
         cy.get('[data-testid=search-bar]')
@@ -12,9 +10,32 @@ describe('Search Bar', () => {
             .should('have.text', 'Find a Safe Restroom Near You')
         cy.get('[data-testid=search-input]')
             .should('have.attr', 'placeholder', 'Enter zip code')
-            .type('11510')
-            .should('have.value', '11510')
         cy.get('[data-testid=search-button]')
             .contains('Search')
     })
+    it('Should show error message and clear form if an incorrect zip code entered', () => {
+        cy.get('[data-testid=search-input]')
+            .type('21834092843')
+            .should('have.value', '21834092843')
+        cy.get('[data-testid=search-button]')
+            .click()
+        cy.get('[data-testid=error-message]')
+            .should('have.text', `Please enter a United States five digit postal code.`)        
+        .get('[data-testid=result-card]')
+            .should('have.length', 0)
+    })
+    // it('Should show bathroom results when search button is clicked', () => {
+    //     cy.get('[data-testid=search-input]')
+    //         .type('90210')
+    //         .should('have.value', '90210')
+    //     cy.get('[data-testid=search-button]')
+    //         .contains('Search')
+    //         .click()
+    //         // .then(async () => await something())
+    //         .intercept('GET', 'https://api.zippopotam.us/us/90210', { zipcode: 90210 })
+    //         .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=${118.4105}&lng=${-34.1030}', { fixture: 'LArestrooms.json' })
+    //         .get('[data-testid=result-card]')
+    //         .should('have.length', 5)
+    // })
+
 });

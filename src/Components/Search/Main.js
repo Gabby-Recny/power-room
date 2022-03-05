@@ -19,7 +19,7 @@ const Main = () => {
         if(postalCode.length !== 5) {
             setPostalCode('')
             setResults([])
-            setError('Please enter a valid postal code.')
+            setError('Please enter a United States five digit postal code.')
         } else {
             setError('')
             setLoader(true)
@@ -74,7 +74,7 @@ const Main = () => {
                 </button>
             </form>
         </section>
-        {error && <h4>{error}</h4>}
+        {error && <h4 data-testid='error-message'>{error}</h4>}
         {isLoading && <Loader />}
         {results.length > 0 && <Results results={results}/>}
         </>

@@ -16,6 +16,10 @@ const ResultCard = (props) => {
                     {props.unisex && <img src={lgbt} alt='Verified gender neutral and/or unisex restroom' />}
                     {props.changing_table && <img src={babyBoy} alt='Verified changing table in the restroom' />}
                 </section>
+                <h5>Upvotes: {props.upvote}</h5>
+                <h5>Downvotes: {props.downvote}</h5>
+                <h5>{props.approved && <h5>Approved</h5>}</h5>
+                <h5>{props.directions}</h5>
             </article>
     )
 }

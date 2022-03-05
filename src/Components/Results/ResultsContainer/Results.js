@@ -14,15 +14,15 @@ const Results = ({ results }) => {
                     state={result.state}
                     accessible={result.accessible}
                     unisex={result.unisex}
-                    // directions={result.directions}
+                    changing_table={result.changing_table}
+                    upvote={result.upvote}
+                    downvote={result.downvote}
+                    approved={result.approved}
+                    directions={result.directions}
                     // comment={result.comment}
                     // latitude={result.latitude}
                     // longitude={result.longitude}
-                    // downvote={result.downvote}
                     // upvote={result.upvote}
-                    // country={result.country}
-                    // changing_table={result.changing_table}
-                    // approved={result.approved}
                     // distance={result.distance}
                 />
             )

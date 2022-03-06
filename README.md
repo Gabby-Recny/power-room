@@ -1,4 +1,4 @@
-# MOD2 OVERLOOK HOTEL
+# The Power Room
 
 ### TABLE OF CONTENTS
 - [Future Features](#future-features)
@@ -15,7 +15,6 @@ According to a [Cambridge University Survey](https://www.cambridge.org/core/jour
 
 ### FUTURE FEATURES
 - Filter functionality that enables users to search by Gender Neutral and ADA accessible bathrooms. 
-- Address link to Google Maps on each bathroom card. 
 - Users able to pick their own style theme based on the transgender and non-binary flags. 
 
 ### TECHNOLOGIES USED 

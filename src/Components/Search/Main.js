@@ -55,29 +55,33 @@ const Main = () => {
 
     return (
         <>
-            <section className='search-section'>
-                <form className='search-bar' data-testid='search-bar'>
-                    <label>
-                        <span>Find a Safe Restroom Near You</span>
-                    </label>
-                    <input
-                        type="number"
-                        data-testid='search-input'
-                        placeholder="Enter zip code"
-                        onChange={(e) => setPostalCode(e.target.value)}
-                    />
-                    <button 
-                        className='non-binary-search-button'
-                        type="submit"
-                        data-testid='search-button'
-                        onClick={(e) => handleSubmission(e)}>
-                        Search
-                    </button>
-                </form>
-            </section>
-            {error && <h4 data-testid='error-message'>{error}</h4>}
+        <section className='search-section'>
+            <form className='search-bar' data-testid='search-bar'>
+                <label>
+                    <span>Find a Safe Restroom Near You</span>
+                </label>
+                <input
+                    className="shadow-drop-2-center"
+                    type="number"
+                    data-testid='search-input'
+                    placeholder="Enter zip code"
+                    onChange={(e) => setPostalCode(e.target.value)}
+                />
+                <button 
+                    className='non-binary-search-button shadow-drop-2-center'
+                    type="submit"
+                    data-testid='search-button'
+                    alt='Search button for bathroom results'
+                    onClick={(e) => handleSubmission(e)}>
+                    Search
+                </button>
+            </form>
+            <div className='error-section'>
+                {error && <h4 className='error-message' data-testid='error-message'>{error}</h4>}
+            </div>
             {isLoading && <Loader />}
-            {results.length > 0 && <Results results={results}/>}
+        </section>
+        {results.length > 0 && <Results results={results}/>}
         </>
     )
 }

@@ -1,9 +1,8 @@
 .results-container {
-    width: 98vw;
+    width: 95vw;
     box-sizing: content-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     margin-top: 5%;
 }

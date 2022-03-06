@@ -1,42 +1,47 @@
-nav {
+header {
     width: 100%;
     height: 13vh;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-nav > section {
-    display: flex;
 }
 
 h1 {
     color: white;
     font-size: 2em;
-    margin-left: 1.5%;
+    padding: 0%;
+    margin: 0%;
 
 }
 
-.burger-button {
-    margin-left: 1.5%;
-    margin-top: 5%;
-    background-color: transparent;
-    height: 10%;
-    width: 10%;
-    border: none;
-}
-
-.menu-icon {
+nav {
     width: 100%;
-    height: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-links {
+    width: 22%;
+    background-color: transparent;
+    color: white;
+    font-size: 1.15em;
+    margin: 1%;;
+    text-align: center;
+    text-decoration: none;
     &:hover {
+        border: white 3px solid;
+        border-radius: 5px;
+        padding: 0.25%;    
         cursor: pointer;
         transform: scale(1.1);
-        transition: 0.3s all;
+        transition: 0.4s all;
     }
-}
-
-.menu {
-  position: absolute;
-  margin-top: 200px;
+    &:focus {
+        border: white 3px solid;
+        border-radius: 5px;
+        padding: 0.25%;    
+    }
 }

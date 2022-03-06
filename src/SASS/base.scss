@@ -1,2 +1,31 @@
 @import 'reset.scss';
 @import '_mixins.scss';
+
+// @media screen
+//   and (min-device-width: 0px)
+//   and (max-device-width: 800px) {
+//   body {
+//     font-size: 25px;
+//   }
+//   .recipe-card {
+//     height: 400px;
+//     width: 40%;
+//   }
+//   .recipe-thumbnail {
+//     max-height: 400px;
+//     width: 150%;
+//   }
+//   .navigation-links {
+//     display:flex;
+//     width: 90%;
+//     li {
+//       min-width: 100px;
+//       font-size: 30px;
+//     }
+//   }
+//   .dropbtn,
+//   .dropdown {
+//     min-width: 100px;
+//     font-size: 30px;
+//   }
+// }

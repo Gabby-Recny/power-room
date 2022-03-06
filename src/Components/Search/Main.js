@@ -62,7 +62,6 @@ const Main = () => {
                     type="number"
                     data-testid='search-input'
                     placeholder="Enter zip code"
-                    // name="postalCode"
                     onChange={(e) => setPostalCode(e.target.value)}
                 />
                 <button 

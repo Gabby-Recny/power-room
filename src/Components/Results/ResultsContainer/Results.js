@@ -29,7 +29,9 @@ const Results = ({ results }) => {
         })
     
         return (
-                <section className='results-container'>
+                <section 
+                    className='results-container'
+                    data-testid='results-container'>
                     {bathroomResults}
                 </section>
             )

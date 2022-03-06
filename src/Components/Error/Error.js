@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 const Error = () => {
     return (
     <> 
-        <section className="error-container">
+        <section 
+            className="error-container" data-testid='error-container'>
             <span><span>4</span></span>
             <span>0</span>
             <span><span>4</span></span>
         </section>
-        <div className="link-container">
+        <div 
+            className="link-container"
+            data-testid='link-container'>
             <Link to="/" className='link-style'>HOME</Link>
         </div>
     </>

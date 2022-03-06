@@ -19,7 +19,7 @@ const Main = () => {
         if(postalCode.length !== 5) {
             setPostalCode('')
             setResults([])
-            setError('Please enter a valid postal code.')
+            setError('Please enter a United States five digit postal code.')
         } else {
             setError('')
             setLoader(true)
@@ -54,25 +54,27 @@ const Main = () => {
     return (
         <>
         <section className='search-section'>
-            <form className='search-bar'>
+            <form className='search-bar' data-testid='search-bar'>
                 <label>
                     <span>Find a Safe Restroom Near You</span>
                 </label>
                 <input
                     type="number"
+                    data-testid='search-input'
                     placeholder="Enter zip code"
-                    name="postalCode"
+                    // name="postalCode"
                     onChange={(e) => setPostalCode(e.target.value)}
                 />
                 <button 
                     className='non-binary-search-button'
                     type="submit"
+                    data-testid='search-button'
                     onClick={(e) => handleSubmission(e)}>
                     Search
                 </button>
             </form>
         </section>
-        {error && <h4>{error}</h4>}
+        {error && <h4 data-testid='error-message'>{error}</h4>}
         {isLoading && <Loader />}
         {results.length > 0 && <Results results={results}/>}
         </>

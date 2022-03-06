@@ -6,7 +6,7 @@ import lgbt from '../../../Assets/lgbt.png';
 
 const ResultCard = (props) => {
     return (
-            <article className='result-card'>
+            <article className='result-card' data-testid='result-card'>
                 <section className='primary-info'>
                     <section className='address-info'>
                         <h2>{props.name}</h2>

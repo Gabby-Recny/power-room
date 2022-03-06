@@ -9,28 +9,29 @@ export const cleanBathroomAPI = (dataArr) => {
             accessible: data.accessible,
             unisex: data.unisex,
             changing_table: data.changing_table,
-            directions: data.directions,
+            directions: displayUnavailability(data.directions),
             downvote: data.downvote,
             upvote: data.upvote,
-            approved: data.approved,
-            // country: data.country,
-            // distance: data.distance.toFixed(2),
-            // comment: data.comment,
-            // latitude: data.latitude,
-            // longitude: data.longitude,
-
+            approved: displayUnavailability(data.approved),
         }
     })
     return cleanedAPI
 }
 
     const capitalize = (phrase) => {
-        // return element.charAt(0).toUpperCase() + element.slice(1);
         return phrase
         .toLowerCase()
         .split(' ')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
+    }
+
+    const displayUnavailability = (element) => { 
+        if (!element || element === 0) {
+            return 'Not Available'
+        } else {
+            return element
+        }
     }
   
 

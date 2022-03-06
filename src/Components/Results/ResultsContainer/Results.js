@@ -21,11 +21,6 @@ const Results = ({ results }) => {
                     downvote={result.downvote}
                     approved={result.approved}
                     directions={result.directions}
-                    // comment={result.comment}
-                    // latitude={result.latitude}
-                    // longitude={result.longitude}
-                    // upvote={result.upvote}
-                    // distance={result.distance}
                 />
             )
         })

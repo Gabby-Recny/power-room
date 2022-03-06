@@ -18,10 +18,10 @@ const Main = () => {
     const checkPostalCode = async () => {
         if(postalCode.length !== 5) {
             setPostalCode('')
-            setResults([])
-            setError('Please enter a United States five digit postal code.')
+            displayError(`Please enter a United States five digit postal code.`)
         } else {
             setError('')
+            setResults([])
             setLoader(true)
             await fetchLocation()
         }
@@ -31,9 +31,7 @@ const Main = () => {
         getZipCode(postalCode)
             .then(data => fetchBathrooms(data))
             .catch(() => {
-                setResults([])
-                setLoader(false)
-                setError(`Couldn't find your location! Please try a different postal code.`)
+                displayError(`Couldn't find your location! Please try a different postal code.`)
             })
     }
 
@@ -44,10 +42,15 @@ const Main = () => {
             setLoader(false)
         })
         .catch(() => {
-            setResults([])
-            setError(`Couldn't find any restrooms in your area! Please try a diferent search query.`)
-            setLoader(false)
+            displayError(`Couldn't find any restrooms in your area! Please try a diferent search query.`)
         })
+
+    }
+
+    const displayError = (errorMessage) => {
+        setResults([])
+        setLoader(false)
+        setError(errorMessage)
 
     }
 
@@ -62,7 +65,6 @@ const Main = () => {
                     type="number"
                     data-testid='search-input'
                     placeholder="Enter zip code"
-                    // name="postalCode"
                     onChange={(e) => setPostalCode(e.target.value)}
                 />
                 <button 

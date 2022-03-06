@@ -1,25 +1,19 @@
 import React, { useState } from "react";
 import './Header.scss';
 import Menu from '../Menu/Menu';
-import menuIcon from '../../Assets/menu.png'
+import menuIcon from '../../Assets/menu.png';
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-    const [clicked, setClicked] = useState(false);
-
-    const toggleClick = () => {
-        setClicked(!clicked)
-    };
     return (
         <>
-        <nav>
-            <section>
-                <button className='burger-button' data-testid='burger-button' onClick={toggleClick} type="button">
-                    <img className='menu-icon' alt='hamburger menu button' src={menuIcon} />
-                </button>
+        <header>
             <h1>Power Room</h1>
-            </section>
-            <div className="menu" data-testid='menu'>{clicked && <Menu />}</div>
-        </nav>
+            <nav>
+                <NavLink to='/' className='nav-links' data-testid='dropdown-items'>Home</NavLink>
+                <NavLink to='/about' className='nav-links' data-testid='dropdown-items'>About</NavLink>
+            </nav>
+        </header>
 
     </>
     )

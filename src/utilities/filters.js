@@ -12,11 +12,11 @@ import React from "react";
 //     }
 // }
 
-export const filterByGender = () => {
+export const filterByGender = (data) => {
     if (unisex.checked) {
-        const filteredBathrooms = results.filter(bathroom => {
+        const filteredBathrooms = data.filter(bathroom => {
             return bathroom.unisex
         })
-        results = filteredBathrooms
+        data = filteredBathrooms
     }
 }

@@ -79,8 +79,8 @@ const Main = () => {
             <div className='error-section'>
                 {error && <h4 className='error-message' data-testid='error-message'>{error}</h4>}
             </div>
+            {isLoading && <Loader />}
         </section>
-        {isLoading && <Loader />}
         {results.length > 0 && <Results results={results}/>}
         </>
     )

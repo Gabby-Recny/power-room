@@ -1,8 +1,6 @@
 
 describe('Search Bar', () => {
     beforeEach( () => {
-        // cy.intercept('GET', 'https://api.zippopotam.us/us/90210', { fixture: '90210' })
-        // cy.intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=10&offset=0&lat=34.1030&lng=-118.4105', { fixture: 'LArestrooms' })
          cy.visit('http://localhost:3000/')
     })
     it('Should have a search bar that only takes in numbers', () => {
@@ -54,28 +52,17 @@ describe('Search Bar', () => {
             .intercept('GET', 'https://api.zippopotam.us/us/99999', { zipcode: 99999 })
         cy.get('[data-testid=error-message]').should('be.visible')
     })
-    // it('Should should show bathroom results when button is clicked', () => {
-    //     cy.get('[data-testid=search-input]')
-    //     .type('90210')
-    //     .should('have.value', '90210')
-    //     cy.get('[data-testid=search-button]')
-    //         .contains('Search')
-    //         .click()
-    //         .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=10&offset=0&lat=34.1030&lng=-118.4105', { fixture: 'LArestrooms.json' })
-    //     .get('[data-testid=result-card]')
-    //         .should('have.length', 5)
-    // })
-    it('Should populate search results', () => {
+    it('Should should show bathroom results when button is clicked', () => {
         cy.get('[data-testid=search-input]')
         .type('90210')
         .should('have.value', '90210')
         cy.get('[data-testid=search-button]')
-            .contains('Search')
-            // .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=34.1030&lng=-118.4105/', { fixture: 'LArestrooms.json' })
-            .click()
-            .intercept('GET', 'https://api.zippopotam.us/us/90210', { zipcode: 90210 })
-            .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=10&offset=0&lat=34.1030&lng=-118.4105', { fixture: 'LArestrooms.json' })
-        cy.get('[data-testid=result-card]').should('be.visible')
+        .contains('Search')
+        .click()
+        .intercept('GET', 'https://api.zippopotam.us/us/90210', { fixture: '90210.json' })
+        .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=34.0901&lng=-118.4065', { fixture: 'LArestrooms.json' })
+        .get('[data-testid=result-card]')
+        .should('have.length', 5)
     })
     it('Should have result cards with information', () => {
         cy.get('[data-testid=search-input]')
@@ -84,7 +71,7 @@ describe('Search Bar', () => {
         cy.get('[data-testid=search-button]')
             .contains('Search')
             .click()
-            .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=10&offset=0&lat=34.1030&lng=-118.4105', { fixture: 'LArestrooms.json' })
+            .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=34.0901&lng=-118.4065', { fixture: 'LArestrooms.json' })
         cy.get('[data-testid=result-card]').first().should('be.visible')
         cy.get('[data-testid=address-info]').first().should('be.visible')
         cy.get('[data-testid=restroom-icons]').first().should('exist')

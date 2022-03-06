@@ -11,10 +11,10 @@ const ResultCard = (props) => {
                 <section className='primary-info'>
                     <section data-testid='address-info'className='address-info'>
                         <h2>{props.name}</h2>
-                        <h5>{props.street} {props.city}, {props.state}</h5>
-                        {/* <p alt='address'>
-                            <a href={`https://maps.google.com/?q=${props.name}_${props.street}_${props.city}_${props.state}`}></a>
-                        </p> */}
+                        <h5 
+                        alt='address'>
+                            <a href={`https://maps.google.com/?q=${props.name}_${props.street}_${props.city}_${props.state}`}>{props.street}</a>
+                        </h5>
                     </section>
                     <section 
                         className='restroom-icons'

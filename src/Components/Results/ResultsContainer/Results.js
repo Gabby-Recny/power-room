@@ -23,8 +23,7 @@ const Results = ({ results }) => {
                     directions={result.directions}
                 />
             )
-        })
-    
+        }) 
         return (
                 <section 
                     className='results-container'

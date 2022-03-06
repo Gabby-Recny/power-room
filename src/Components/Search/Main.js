@@ -50,9 +50,11 @@ const Main = () => {
         setResults([])
         setLoader(false)
         setError(errorMessage)
-
     }
-
+    const checkForError = error && <h4 className='error-message' data-testid='error-message'>{error}</h4>;
+    const displayLoader = isLoading && <Loader />;
+    const checkResults = results.length > 0 && <Results results={results}/>;
+    
     return (
         <>
         <section className='search-section'>
@@ -77,11 +79,11 @@ const Main = () => {
                 </button>
             </form>
             <div className='error-section'>
-                {error && <h4 className='error-message' data-testid='error-message'>{error}</h4>}
+                {checkForError}
             </div>
-            {isLoading && <Loader />}
+            {displayLoader}
         </section>
-        {results.length > 0 && <Results results={results}/>}
+        {checkResults}
         </>
     )
 }

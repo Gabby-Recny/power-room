@@ -4,7 +4,7 @@
 
 .error-container {
   text-align: center;
-  font-size: 180px;
+  font-size: 1150%;
   font-family: 'Catamaran', sans-serif;
   font-weight: 800;
   margin: 20px 15px;
@@ -109,16 +109,4 @@
   font-size: 1em;
   width: 100%;
   @include transgender-button
-    // background-color: #5B20B9;
-    // padding: 10px 15px;
-    // border-radius: 0;
-    // font-family: 'Montserrat', Helvetica, sans-serif;
-    // color: #fff;
-    // display: inline-block;
-    // margin-right: 5px;
-    // margin-bottom: 5px;
-    // line-height: 1.5;
-    // text-decoration: none;
-    // margin-top: 50px;
-    // letter-spacing: 1px;
 }

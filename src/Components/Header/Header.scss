@@ -33,13 +33,16 @@ nav {
     text-decoration: none;
     border: none;
     &:hover {
-        text-decoration: underline;
+        border: white 3px solid;
+        border-radius: 5px;
+        padding: 1px;  
         cursor: pointer;
         transform: scale(1.1);
         transition: 0.4s all;
     }
     &:focus {
-        border: white 5px solid;
-        border-radius: 5px;    
+        border: white 3px solid;
+        border-radius: 5px;
+        padding: 1px;    
     }
 }

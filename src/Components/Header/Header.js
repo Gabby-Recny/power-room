@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import './Header.scss';
-import Menu from '../Menu/Menu';
-import menuIcon from '../../Assets/menu.png';
 import { NavLink } from "react-router-dom";
 
 const Header = () => {

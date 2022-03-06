@@ -3,7 +3,7 @@ import './Loader.scss';
 
 const Loader = () => {
     return (
-        <section className='pos-center'>
+        <section data-testid='loader' className='pos-center'>
             <div className='loader pos-center'></div>
         </section>
     )

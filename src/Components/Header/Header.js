@@ -30,14 +30,4 @@ export default Header;
 
 
 
-// import React, { useContext, useState } from "react";
-// import { NavLink } from "react-router-dom";
-// import { UserContext } from "../Contexts/UserContext";
-// import Menu from "./HamburgerMenu";
-// import menuIcon from "../Assets/menuIcon.png"
-// import './Nav.scss'
-
-
-
-
 

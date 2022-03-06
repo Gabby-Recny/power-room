@@ -87,7 +87,7 @@ const Search = () => {
                 {error && <h2>Looks like there's been an issue. Please try again</h2>}
                 {/* {checkResults()} */}
                 </section>
-           {error && <h5>{error}</h5>}
+           {error && <h5 data-testid='error-message'>{error}</h5>}
        </>
 
     )

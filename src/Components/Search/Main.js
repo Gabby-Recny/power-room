@@ -75,7 +75,8 @@ const Main = () => {
         <section className='search-section'>
             <form className='search-bar' data-testid='search-bar'>
                 <label>
-                    <span>Find a Safe Restroom Near You</span>
+                    <span 
+                    data-testid='search-title'>Find a Safe Restroom Near You</span>
                 </label>
                 <input
                     className="shadow-drop-2-center"
@@ -89,6 +90,7 @@ const Main = () => {
                     type="checkbox"
                     checked={checked}
                     onChange={e => handleCheck(e)}
+                    data-testid='checkbox'
                     />
                     Gender Neutral
                 </label>

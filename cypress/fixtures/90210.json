@@ -1,5 +1,7 @@
 {
-    "zipcode": 90210,
-    "longitude": 34.1030,
-    "latitude": 118.4105
+    "90210": {    
+        "zipcode": 90210,
+        "longitude": 34.1030,
+        "latitude": 118.4105
+    }
 }

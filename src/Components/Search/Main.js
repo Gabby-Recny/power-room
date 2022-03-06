@@ -62,21 +62,24 @@ const Main = () => {
                     <span>Find a Safe Restroom Near You</span>
                 </label>
                 <input
+                    className="shadow-drop-2-center"
                     type="number"
                     data-testid='search-input'
                     placeholder="Enter zip code"
                     onChange={(e) => setPostalCode(e.target.value)}
                 />
                 <button 
-                    className='non-binary-search-button'
+                    className='non-binary-search-button shadow-drop-2-center'
                     type="submit"
                     data-testid='search-button'
                     onClick={(e) => handleSubmission(e)}>
                     Search
                 </button>
             </form>
+            <div className='error-section'>
+                {error && <h4 className='error-message' data-testid='error-message'>{error}</h4>}
+            </div>
         </section>
-        {error && <h4 data-testid='error-message'>{error}</h4>}
         {isLoading && <Loader />}
         {results.length > 0 && <Results results={results}/>}
         </>

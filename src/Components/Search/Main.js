@@ -72,6 +72,7 @@ const Main = () => {
                     className='non-binary-search-button shadow-drop-2-center'
                     type="submit"
                     data-testid='search-button'
+                    alt='Search button for bathroom results'
                     onClick={(e) => handleSubmission(e)}>
                     Search
                 </button>

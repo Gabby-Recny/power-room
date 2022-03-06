@@ -53,7 +53,6 @@ describe('Search Bar', () => {
             .click()
             .intercept('GET', 'https://api.zippopotam.us/us/99999', { zipcode: 99999 })
         cy.get('[data-testid=error-message]').should('be.visible')
-        // .should('have.text', `Couldn't find your location! Please enter a valid postal code.`)
     })
     // it('Should should show bathroom results when button is clicked', () => {
     //     cy.get('[data-testid=search-input]')

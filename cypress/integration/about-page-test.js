@@ -10,6 +10,10 @@ describe('About Page', () => {
             .click()
             .get('[data-testid=menu')
             .should('be.visible')
+            .first()
+                .click()
+                .server()
+                .route('/')
     })
     it('Should have about url when displaying page', () => {
         cy.url().should('eq', 'http://localhost:3000/about')

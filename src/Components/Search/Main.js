@@ -9,9 +9,12 @@ const Main = () => {
     const [ error, setError ] = useState('');
     const [ isLoading, setLoader ]  = useState(false);
     const [ results, setResults ] = useState([]);
+    const [checked, setChecked] = useState(false);
+
 
     const handleSubmission = (e) => {
         e.preventDefault()
+        setResults([])
         checkPostalCode(postalCode)
     }
 
@@ -21,7 +24,6 @@ const Main = () => {
             displayError(`Please enter a United States five digit postal code.`)
         } else {
             setError('')
-            setResults([])
             setLoader(true)
             await fetchLocation()
         }
@@ -29,7 +31,9 @@ const Main = () => {
 
     const fetchLocation = () => {
         getZipCode(postalCode)
-            .then(data => fetchBathrooms(data))
+            .then(data => {
+                fetchBathrooms(data)
+            })
             .catch(() => {
                 displayError(`Couldn't find your location! Please try a different postal code.`)
         })
@@ -38,7 +42,7 @@ const Main = () => {
     const fetchBathrooms = (data) => {
         getBathrooms(data.latitude, data.longitude)
         .then(bathrooms => {
-            setResults(bathrooms)
+            checked ? filterByGender(bathrooms) : setResults(bathrooms)
             setLoader(false)
         })
         .catch(() => {
@@ -51,6 +55,18 @@ const Main = () => {
         setLoader(false)
         setError(errorMessage)
     }
+
+    const filterByGender = (results) => {
+            const filteredBathrooms = results.filter(bathroom => {
+                return bathroom.unisex
+            })
+            setResults(filteredBathrooms)
+    }
+
+    const handleCheck = (event) => {
+        setChecked(!checked)
+    }
+
     const checkForError = error && <h4 className='error-message' data-testid='error-message'>{error}</h4>;
     const displayLoader = isLoading && <Loader />;
     const checkResults = results.length > 0 && <Results results={results}/>;
@@ -60,7 +76,8 @@ const Main = () => {
         <section className='search-section'>
             <form className='search-bar' data-testid='search-bar'>
                 <label>
-                    <span>Find a Safe Restroom Near You</span>
+                    <span 
+                    data-testid='search-title'>Find a Safe Restroom Near You</span>
                 </label>
                 <input
                     className="shadow-drop-2-center"
@@ -69,6 +86,15 @@ const Main = () => {
                     placeholder="Enter zip code"
                     onChange={(e) => setPostalCode(e.target.value)}
                 />
+                <label>
+                <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={(e) => handleCheck(e)}
+                    data-testid='checkbox'
+                    />
+                    Gender Neutral
+                </label>
                 <button 
                     className='non-binary-search-button shadow-drop-2-center'
                     type="submit"

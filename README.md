@@ -11,7 +11,10 @@
 ### ABSTRACT
 According to a [Cambridge University Survey](https://www.cambridge.org/core/journals/behavioural-public-policy/article/genderneutral-bathroom-a-new-frame-and-some-nudges/C6CDCA42BAEBCE684B243EB9773A771C), 58% of transgender and non-binary folks refrain from using public bathrooms due to fear of confrontation. The Power Room is a React built application designed to empower trans and non-binary folks to find public bathrooms that consider their identities. The user types in a zip code of their location to search for public restrooms in their area. Cards with bathroom information are displayed with icons that indicate if the bathroom is gender neutral, ADA accessible and has a changing table. 
 
-- INCLUDE PLENTY OF GIFS OF WORKING PROJ
+
+![Demo GIF for The Power Room](https://user-images.githubusercontent.com/84749512/156950608-c4cfc2a2-583a-4422-abab-144eb0bc37e1.gif)
+![Error Handling for The Power Room App](https://user-images.githubusercontent.com/84749512/156950592-c2c70d1e-cd86-46a8-98ff-cbf426df1c06.gif)
+
 
 ### FUTURE FEATURES
 - Filter functionality that enables users to search by ADA accessible bathrooms. 

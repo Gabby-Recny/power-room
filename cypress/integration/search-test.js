@@ -64,7 +64,7 @@ describe('Search Bar', () => {
             .get('[data-testid=result-card]')
             .should('have.length', 5)
     })
-    it.only('Should show gender neutral only bathrooms when applied', () => {
+    it('Should show gender neutral only bathrooms when applied', () => {
         cy.get('[data-testid=search-input]')
             .type('90210')
             .should('have.value', '90210')
@@ -73,7 +73,7 @@ describe('Search Bar', () => {
         cy.get('[data-testid=search-button]').click()
             .intercept('GET', 'https://api.zippopotam.us/us/90210', { fixture: '90210.json' })
             .intercept('GET', 'https://www.refugerestrooms.org/api/v1/restrooms/by_location?page=1&per_page=30&offset=0&lat=34.0901&lng=-118.4065', { fixture: 'LArestrooms.json' })
-            // .get('[data-testid=result-card]').should('have.length', 3)
+            .get('[data-testid=result-card]').should('have.length', 3)
 
     })
     it('Should have result cards with information', () => {

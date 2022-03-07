@@ -13,7 +13,8 @@ const ResultCard = (props) => {
                         <h2>{props.name}</h2>
                         <h5 
                         alt='address'>
-                            <a href={`https://maps.google.com/?q=${props.name}_${props.street}_${props.city}_${props.state}`}>{props.street}</a>
+                            <a href={`https://maps.google.com/?q=${props.name}_${props.street}_${props.city}_${props.state}`}
+                            target='_blank'>{props.street}</a>
                         </h5>
                     </section>
                     <section 

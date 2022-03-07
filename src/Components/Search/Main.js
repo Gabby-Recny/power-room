@@ -3,7 +3,6 @@ import { getZipCode, getBathrooms } from "../../utilities/apiCalls";
 import Loader from "../Loader/Loader";
 import Results from "../Results/ResultsContainer/Results";
 import './Main.scss';
-// import { filterByGender } from "../../utilities/filters";
 
 const Main = () => {
     const [ postalCode, setPostalCode ] = useState('');
@@ -15,6 +14,7 @@ const Main = () => {
 
     const handleSubmission = (e) => {
         e.preventDefault()
+        setResults([])
         checkPostalCode(postalCode)
     }
 
@@ -24,7 +24,6 @@ const Main = () => {
             displayError(`Please enter a United States five digit postal code.`)
         } else {
             setError('')
-            setResults([])
             setLoader(true)
             await fetchLocation()
         }
@@ -32,7 +31,9 @@ const Main = () => {
 
     const fetchLocation = () => {
         getZipCode(postalCode)
-            .then(data => fetchBathrooms(data))
+            .then(data => {
+                fetchBathrooms(data)
+            })
             .catch(() => {
                 displayError(`Couldn't find your location! Please try a different postal code.`)
         })
@@ -55,7 +56,7 @@ const Main = () => {
         setError(errorMessage)
     }
 
-    const filterByGender = () => {
+    const filterByGender = (results) => {
             const filteredBathrooms = results.filter(bathroom => {
                 return bathroom.unisex
             })
@@ -89,7 +90,7 @@ const Main = () => {
                 <input
                     type="checkbox"
                     checked={checked}
-                    onChange={e => handleCheck(e)}
+                    onChange={(e) => handleCheck(e)}
                     data-testid='checkbox'
                     />
                     Gender Neutral

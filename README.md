@@ -3,7 +3,6 @@
 ### TABLE OF CONTENTS
 - [Future Features](#future-features)
 - [Tech Stack](#technologies-used)
-- [Install Instructions](#instructions)
 - [Authors/Links](#authorslinks)
 
 
@@ -38,17 +37,6 @@ According to a [Cambridge University Survey](https://www.cambridge.org/core/jour
 
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-
-### INSTRUCTIONS
-- fork the repository
-- copy the SSH clone address
-- run ```git clone [remote-address]``` in your repo
-- run ```npm install``` in your terminal
-- run ```npm start``` in the Terminal visit localhost:8080
-
-- now fork and clone the APIs from: 
-- run ```npm install``` in your terminal
-- run ```npm start``` in the Terminal
 
 ## AUTHORS/LINKS
 
